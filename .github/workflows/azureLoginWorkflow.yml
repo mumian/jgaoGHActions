@@ -1,16 +1,23 @@
-name: Azure Login sample workflow azureLoginWorkflow.yml
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/deployTemplates.yml"
+      - "templates/azuredeploy.json"
 
-on: [push]
+name: Deploy ARM Template
 
 jobs:
-  test-azure-login:
+  deploy-storage-account-template:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@master
 
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - run: |
-        az account show
+      - name: Deploy ARM Template
+        uses: whiteducksoftware/azure-arm-action@v2
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+            resourceGroupName: jgao0428rg
+            templateLocation: ./templates/azuredeploy.json
