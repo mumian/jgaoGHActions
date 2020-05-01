@@ -1,4 +1,4 @@
-name: Azure Login sample workflow
+name: Azure Login sample workflow azureLoginWorkflow.yml
 
 on: [push]
 
