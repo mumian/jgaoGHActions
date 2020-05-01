@@ -3,7 +3,7 @@ on:
     branches:
       - master
     paths:
-      - ".github/workflows/deployTemplates.yml"
+      - ".github/workflows/azureLoginWorkflow.yml"
       - "templates/azuredeploy.json"
 
 name: Deploy ARM Template
