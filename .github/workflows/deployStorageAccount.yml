@@ -22,4 +22,4 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az deployment group create --resource-group myResourceGroup --template-file ./templates/azuredeploy.json
+            az deployment group create --resource-group jgao0428rg --template-file ./templates/azuredeploy.json
