@@ -19,7 +19,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy ARM Template
-        uses: whiteducksoftware/azure-arm-action-js@v1
+        uses: azure/CLI@v1
         with:
-          resourceGroupName: jgao0428rg
-          templateLocation: ./templates/azuredeploy.json
+          inlineScript: |
+            az deployment group create --resource-group myResourceGroup --template-file ./templates/azuredeploy.json
