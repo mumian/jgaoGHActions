@@ -19,7 +19,7 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: ./deleteme.bicep
+        template: ./templates/deleteme.bicep
         parameters: storageAccountType=Standard_LRS
 
       # output containerName variable from template
