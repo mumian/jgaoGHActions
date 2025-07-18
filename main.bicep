@@ -18,7 +18,7 @@ param location string = resourceGroup().location
 
 var uniqueStorageName = '${storagePrefix}${uniqueString(resourceGroup().id)}'
 
-resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
+resource stg 'Microsoft.Storage/storageAccounts@2025-01-01' = {
   name: uniqueStorageName
   location: location
   sku: {
@@ -30,4 +30,4 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   }
 }
 
-output storageEndpoint object = stg.properties.primaryEndpoints
+output deploymentOutput object = deployment()
